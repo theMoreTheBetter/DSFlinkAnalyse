@@ -7,8 +7,9 @@ import java.net.URL;
 import java.net.URLConnection;
 
 public class DsClienttest {
+    //TODO
     public static void main(String[] args) {
-        String message = "123";
+        String message = "学习项目整合";
         String address = "http://localhost:6097/dsInfoController/webInfoController";
         try {
             URL url = new URL(address);

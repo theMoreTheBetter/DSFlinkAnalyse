@@ -1,6 +1,8 @@
 package aa.app.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,11 +17,15 @@ import java.io.PrintWriter;
 @Controller
 @RequestMapping("dsInfoController")
 public class DsInfoController {
+
+    @Autowired
+    private KafkaTemplate kafkaTemplate;
+
     @RequestMapping(value = "webInfoController",method = RequestMethod.POST)
     public void webInfoController(@RequestBody  String jsonstr, HttpServletRequest request, HttpServletResponse response){
         System.out.println("hello~~~~~~~~" + jsonstr);
         //业务开始
-
+        kafkaTemplate.send("test1","key",jsonstr);
         //业务结束
         PrintWriter printWriter = getWriter(response);
         printWriter.write("successsss");
