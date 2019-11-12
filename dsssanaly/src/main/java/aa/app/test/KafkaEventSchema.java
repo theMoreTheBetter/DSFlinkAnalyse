@@ -1,4 +1,4 @@
-package aa.app;
+package aa.app.test;
 
 import org.apache.flink.api.common.serialization.DeserializationSchema;
 import org.apache.flink.api.common.serialization.SerializationSchema;

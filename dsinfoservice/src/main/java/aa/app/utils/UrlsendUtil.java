@@ -1,16 +1,15 @@
-package aa.app.test;
+package aa.app.utils;
 
-import java.io.*;
+import java.io.BufferedOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.net.URLConnection;
 
-public class DsClienttest {
-    //TODO
-    public static void main(String[] args) {
-        String message = "学习项目整合";
-        String address = "http://localhost:6097/dsInfoController/webInfoController";
+public class UrlsendUtil {
+    public static String sendmessage(String address,String message){
         try {
             URL url = new URL(address);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -38,10 +37,12 @@ public class DsClienttest {
             }
             System.out.println(conn.getResponseCode());
             System.out.println(temp);
+            return temp;
         } catch (MalformedURLException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return "";
     }
 }

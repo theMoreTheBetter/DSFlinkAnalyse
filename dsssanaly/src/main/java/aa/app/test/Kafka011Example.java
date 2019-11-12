@@ -1,4 +1,4 @@
-package aa.app;
+package aa.app.test;
 
 import org.apache.flink.api.common.functions.RichMapFunction;
 import org.apache.flink.api.common.restartstrategy.RestartStrategies;

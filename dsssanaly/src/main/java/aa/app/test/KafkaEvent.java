@@ -1,4 +1,4 @@
-package aa.app;
+package aa.app.test;
 
 public class KafkaEvent {
 
